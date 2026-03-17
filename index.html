@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MyE Food Service — Distribución profesional de alimentos, empaques y suministros para restaurantes, sodas, cafeterías y food trucks en Costa Rica." />
+  <meta property="og:title" content="MyE Food Service — Distribución de Alimentos en Costa Rica" />
+  <meta property="og:description" content="Distribución profesional de alimentos e insumos para restaurantes, sodas, cafeterías y negocios de comida." />
+  <title>MyE Food Service — Distribución de Alimentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#inicio" class="navbar__brand" onclick="smoothScroll(event, 'inicio')">
+        <img src="assets/logo.png" alt="MyE Food Service Logo" class="navbar__logo" />
+        <span class="navbar__name">MyE Food Service</span>
+      </a>
+      <nav class="navbar__nav" id="navMenu">
+        <a href="#inicio" onclick="smoothScroll(event, 'inicio')">Inicio</a>
+        <a href="#productos" onclick="smoothScroll(event, 'productos')">Productos</a>
+        <a href="#nosotros" onclick="smoothScroll(event, 'nosotros')">Nosotros</a>
+        <a href="#contacto" onclick="smoothScroll(event, 'contacto')">Contacto</a>
+        <a href="https://wa.me/50689823726" target="_blank" rel="noopener" class="btn btn--sm btn--primary">WhatsApp</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+      <div class="hero__content fade-in">
+        <span class="hero__badge">Excelencia en Distribución</span>
+        <h1 class="hero__title">Distribución profesional de alimentos e insumos para restaurantes.</h1>
+        <p class="hero__sub">MyE Food Service — Su socio confiable en distribución de alimentos, empaques y suministros para negocios de comida en Costa Rica.</p>
+        <div class="hero__actions">
+          <a href="#productos" class="btn btn--primary btn--lg" onclick="smoothScroll(event, 'productos')">Ver Productos</a>
+          <a href="#contacto" class="btn btn--outline btn--lg" onclick="smoothScroll(event, 'contacto')">Contáctenos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stats__item reveal">
+        <span class="stats__value">100+</span>
+        <span class="stats__label">Productos</span>
+      </div>
+      <div class="stats__item reveal">
+        <span class="stats__value">5</span>
+        <span class="stats__label">Categorías</span>
+      </div>
+      <div class="stats__item reveal">
+        <span class="stats__value">Rápida</span>
+        <span class="stats__label">Entrega</span>
+      </div>
+      <div class="stats__item reveal">
+        <span class="stats__value">Competitivos</span>
+        <span class="stats__label">Precios</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="products" id="productos">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Catálogo</p>
+        <h2 class="section-title">Nuestros Productos</h2>
+        <p class="section-sub">Explore nuestro catálogo completo de soluciones para su negocio.</p>
+      </div>
+
+      <!-- Search & Filter -->
+      <div class="products__controls reveal">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="searchInput" class="search-input" placeholder="Buscar productos..." autocomplete="off" />
+        </div>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-cat="Todos">Todos</button>
+          <button class="filter-tab" data-cat="Congelados">Congelados</button>
+          <button class="filter-tab" data-cat="Empaques">Empaques</button>
+          <button class="filter-tab" data-cat="Utensilios">Utensilios</button>
+          <button class="filter-tab" data-cat="Limpieza">Limpieza</button>
+          <button class="filter-tab" data-cat="Varios">Varios</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="products__grid" id="productsGrid"></div>
+      <p class="products__empty hidden" id="emptyMsg">No se encontraron productos. <button onclick="resetFilters()" class="link-btn">Limpiar filtros</button></p>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section class="about" id="nosotros">
+    <div class="container about__inner">
+      <div class="about__text reveal">
+        <p class="section-label">Quiénes Somos</p>
+        <h2 class="section-title">Su aliado de confianza en distribución de alimentos</h2>
+        <p>En <strong>MyE Food Service</strong> llevamos años siendo el aliado de confianza de restaurantes, sodas, cafeterías, food trucks y negocios de comida en Costa Rica. Nos especializamos en la distribución de alimentos frescos y congelados, empaques, utensilios y productos de limpieza, asegurando que cada negocio cuente con todo lo que necesita para operar de forma eficiente y con los mejores estándares de calidad.</p>
+        <p>Trabajamos directamente con distribuidores y proveedores de confianza para ofrecer precios competitivos sin sacrificar la calidad. Nuestro equipo está comprometido con brindar un servicio ágil, personalizado y orientado a las necesidades reales de cada cliente.</p>
+        <p>Porque sabemos que detrás de cada negocio hay personas que dan lo mejor de sí mismas, en MyE Food Service estamos aquí para hacerles el trabajo más fácil.</p>
+      </div>
+      <div class="about__features reveal">
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><path d="M12 14h.01M16 14h.01M20 14h.01M12 17h.01M16 17h.01M20 17h.01"/></svg>
+          </div>
+          <div>
+            <h3>Distribución Ágil</h3>
+            <p>Entregamos directamente en su negocio con rapidez y puntualidad para que nunca le falten los insumos que necesita.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3>Productos de Calidad</h3>
+            <p>Trabajamos con proveedores y marcas de confianza que cumplen con los más altos estándares de calidad e higiene.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <h3>Precios Competitivos</h3>
+            <p>Manejamos precios accesibles y justos para que su negocio mantenga márgenes saludables sin sacrificar calidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Contacto</p>
+        <h2 class="section-title">Hablemos de su negocio</h2>
+        <p class="section-sub">Escríbanos o llámenos. Con gusto le atendemos y buscamos la mejor solución para su negocio.</p>
+      </div>
+      <div class="contact__inner">
+        <!-- Info -->
+        <div class="contact__info reveal">
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.5 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.55 6.55l.81-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <p class="contact-item__label">Teléfono / WhatsApp</p>
+                <a href="tel:+50689823726" class="contact-item__value">+506 8982 3726</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <p class="contact-item__label">Correo Electrónico</p>
+                <a href="mailto:aaronmejiavg@gmail.com" class="contact-item__value">aaronmejiavg@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/50689823726" target="_blank" rel="noopener" class="btn btn--whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Enviar mensaje por WhatsApp
+          </a>
+        </div>
+
+        <!-- Form -->
+        <div class="contact__form reveal">
+          <h3>Formulario de Contacto</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="fname">Nombre</label>
+              <input type="text" id="fname" name="nombre" placeholder="Su nombre o razón social" required />
+            </div>
+            <div class="form-group">
+              <label for="femail">Correo Electrónico</label>
+              <input type="email" id="femail" name="correo" placeholder="correo@ejemplo.com" required />
+            </div>
+            <div class="form-group">
+              <label for="fmsg">Mensaje</label>
+              <textarea id="fmsg" name="mensaje" rows="5" placeholder="Cuéntenos qué necesita para su negocio..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Enviar Mensaje</button>
+            <p class="form-success hidden" id="formSuccess">✓ Mensaje enviado. Nos pondremos en contacto pronto.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="MyE Food Service" class="footer__logo" />
+        <p>Distribución profesional de alimentos, empaques y suministros para restaurantes, sodas, cafeterías, food trucks y negocios de comida en Costa Rica.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio" onclick="smoothScroll(event,'inicio')">Inicio</a></li>
+          <li><a href="#productos" onclick="smoothScroll(event,'productos')">Productos</a></li>
+          <li><a href="#nosotros" onclick="smoothScroll(event,'nosotros')">Nosotros</a></li>
+          <li><a href="#contacto" onclick="smoothScroll(event,'contacto')">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+50689823726">+506 8982 3726</a></li>
+          <li><a href="mailto:aaronmejiavg@gmail.com">aaronmejiavg@gmail.com</a></li>
+          <li><a href="https://wa.me/50689823726" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 MyE Food Service / MyE Distributions. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
