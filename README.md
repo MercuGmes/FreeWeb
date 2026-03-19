@@ -53,26 +53,6 @@ MyE-Food-Service/
 
 ---
 
-## 🔧 Installation  
-
-Clone the repository:
-
-```bash
-git clone https://github.com/MercuGmes/MyE-Food-Service.git
-```
-
-Open the project:
-
-```bash
-cd MyE-Food-Service
-```
-
-Run it:
-
-- Open `index.html` in your browser  
-
----
-
 ## 🎯 Purpose  
 
 This project was built to:  
